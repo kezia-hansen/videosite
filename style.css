@@ -1,0 +1,254 @@
+/******************   General   ************************/
+body {
+    background-image: url(billeder/background.jpeg);
+    background-color: #ffe3c2;
+    background-blend-mode: multiply;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5deb3b5;
+    border: 3.5px dashed #a0522d;
+    border-radius: 35px;
+    z-index: 2;
+}
+
+.logo img {
+    width: 7%;
+    height: auto;
+}
+
+.navlist {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+    overflow-x: auto;
+}
+
+.navlist a {
+    font-family: 'Indie Flower', cursive;
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px #8b4513;
+}
+
+.navlist a:hover {
+    color: #a0522d;
+    text-shadow: 2px 2px #ffffff;
+}
+
+.navlist a.active {
+    color: #a0522d;
+    text-shadow: 2px 2px #ffffff;
+}
+
+.navlist a:last-child {
+    margin-left: auto;
+}
+
+#menu-icon {
+    color: #a0522d;
+    font-size: 35px;
+    z-index: 11;
+    cursor: url(SVG/pointer.svg), default;
+    display: none;
+}
+
+footer {
+    font-family: 'Indie Flower', cursive;
+    font-size: 15px;
+    line-height: 1;
+    color: #8B4513;
+    margin: 10px 51px 45px;
+    text-align: center;
+}
+
+/******************   Forside   ************************/
+
+h1 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 70px;
+    line-height: 1;
+    color: #8B4513;
+    margin: 30px 0 45px;
+    text-align: center;
+    border-bottom: 3.5px dashed #ffffff;
+}
+
+h3 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    line-height: 1;
+    color: #CD853F;
+    margin: -25px 0 45px;
+    text-align: center;
+    border-bottom: 3.5px dashed #ffffff;
+    padding-bottom: 1%;
+}
+
+p {
+    font-family: 'Indie Flower', cursive;
+    font-size: 15px;
+    line-height: 1;
+    color: #CD853F;
+    margin: -25px 51px 45px;
+    text-align: center;
+}
+
+.introduction {
+    background-color: #F5DEB3;
+    border: 3.5px dashed #A0522D;
+    border-radius: 35px;
+    margin-top: 5%;
+}
+
+.video video {
+    width: 49%;
+    height: auto;
+    border: 3.5px dashed #A0522D;
+    border-radius: 35px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
+.youtube {
+    width: 37%;
+    height: 39%;
+    aspect-ratio: 560/315;
+    border: 3.5px dashed #A0522D;
+    border-radius: 35px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin-top: 4%;
+    margin-bottom: 3%;
+    position: absolute;
+    top: 50%;
+    left: 52%;
+}
+
+
+/******************   Galleri   ************************/
+
+.info {
+    background-color: #F5DEB3;
+    border: 3.5px dashed #A0522D;
+    border-radius: 35px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 30px;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 5%;
+}
+
+.grid-item {
+    position: relative;
+    border: 3.5px dashed #A0522D;
+    border-radius: 35px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.grid-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: -16%;
+}
+
+.grid-item.wide {
+    grid-column: 1 / 4;
+}
+
+.flip-horizontal {
+    transform: scaleX(-1);
+}
+
+/******************   mobile version   ************************/
+
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    .logo img {
+        width: 15%;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: -116%;
+        width: 300px;
+        height: 40vh;
+        background: #F5DEB3;
+        border: 3.5px dashed #A0522D;
+        border-radius: 35px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px 20px;
+        transition: all .55s ease;
+    }
+
+    .navlist a {
+        margin-left: 0;
+        display: block;
+        margin: 7px 0;
+    }
+
+    .navlist.open {
+        right: -46px;
+        top: 60px;
+        padding: 0%;
+    }
+
+    h3 {
+        font-size: 2rem;
+        padding: 2%;
+    }
+
+    p {
+        margin-left: 9%;
+    }
+
+    .video video {
+        width: 100%;
+        position: relative;
+        bottom: -7%;
+        margin-top: 8%;
+    }
+
+    .youtube {
+        width: 100%;
+        position: relative;
+        bottom: -6%;
+        left: 2%;
+    }
+
+    footer {
+        margin-top: 18%;
+    }
+}
